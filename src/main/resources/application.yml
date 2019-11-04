@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:postgresql://localhost:5432/jooqtest
+    username: postgres
+    password: postgres
+  flyway:
+    schemas: jooqtest
