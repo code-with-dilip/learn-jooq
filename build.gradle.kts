@@ -1,19 +1,20 @@
-
 allprojects {
     group = "com.learnjooq"
 
     repositories {
         jcenter()
+        mavenLocal()
+        mavenCentral()
     }
-
-
 }
+
+
 subprojects {
     buildscript {
         repositories {
             mavenCentral()
             maven {
-                url "https://plugins.gradle.org/m2/"
+                setUrl( "https://plugins.gradle.org/m2/")
             }
         }
     }
@@ -22,9 +23,4 @@ subprojects {
         mavenCentral()
         jcenter()
     }
-
-
 }
-/*
-generateDeliveryJooqSchemaSource.dependsOn flywayMigrate
-test.dependsOn flywayClean*/
