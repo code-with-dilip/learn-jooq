@@ -4,7 +4,10 @@
 
 Complete the below steps before running the integration tests. 
 
-##### Install postgres
+
+### Install postgres
+
+- Follow the below steps to install postgres and db.
  
 ```androiddatabinding
 brew install jooqtest
