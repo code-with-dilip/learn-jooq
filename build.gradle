@@ -1,95 +1,30 @@
-plugins {
-    id 'org.springframework.boot' version '2.2.0.RELEASE'
-    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
-    id 'groovy'
-    id "org.flywaydb.flyway" version '5.2.4'
-    id 'nu.studer.jooq' version '3.0.3'
-    id 'java'
 
-}
-group = 'com.learnjooq'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
-repositories {
-    mavenCentral()
-}
-dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-jooq'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.codehaus.groovy:groovy'
-    implementation 'org.flywaydb:flyway-core'
+allprojects {
+    group = "com.learnjooq"
 
-    //postgres
-    implementation 'org.postgresql:postgresql:42.2.8'
-
-
-
-    //jooq-runtime
-    jooqRuntime("org.postgresql:postgresql:42.2.8")
-    compile group: 'org.jooq', name: 'jooq-meta', version: '3.11.9'
-    compile group: 'org.jooq', name: 'jooq-codegen', version: '3.11.9'
-    compile group: 'postgresql', name: 'postgresql', version: '9.1-901-1.jdbc4'
-
-    testImplementation('org.springframework.boot:spring-boot-starter-test') {
-        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    repositories {
+        jcenter()
     }
-}
-test {
-    useJUnitPlatform()
-}
 
-jooq {
-    delivery(sourceSets.main) {
-        jdbc {
-            driver = 'org.postgresql.Driver'
-            url = 'jdbc:postgresql://localhost:5432/jooqtest'
-            user = 'postgres'
-            password = 'postgres'
-            schema = 'public'
-        }
-        generator {
-            name = 'org.jooq.codegen.DefaultGenerator'
-            strategy {
-                name = 'org.jooq.codegen.DefaultGeneratorStrategy'
-            }
-            database {
-                name = 'org.jooq.meta.postgres.PostgresDatabase'
-                inputSchema = 'public'
-                /*customTypes {
-                    customType {
-                        name = 'com.fasterxml.jackson.databind.JsonNode'
-                        converter = 'csmart.api.config.db.PostgresJSONJacksonJsonNodeBinding'
-                    }
-                }*/
-                /*forcedTypes {
-                    forcedType {
-                        name = 'com.fasterxml.jackson.databind.JsonNode'
-                        expression = 'public\\.users\\.address'
-                    }
-                }*/
-            }
-            generate {
-                relations = true
-                deprecated = false
-                records = true
-                immutablePojos = false
-                fluentSetters = true
-            }
-            target {
-                packageName = 'com.learnjooq'
-                directory = 'src/main/generated/java'
+
+}
+subprojects {
+    buildscript {
+        repositories {
+            mavenCentral()
+            maven {
+                url "https://plugins.gradle.org/m2/"
             }
         }
     }
-}
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+    }
 
-flyway {
-    url = 'jdbc:postgresql://localhost:5432/jooqtest'
-    user = 'postgres'
-    password = 'postgres'
-    schemas = ['jooqtest']
-    locations = ["filesystem:$project.projectDir/src/main/resources/db/migration"]
-}
 
+}
+/*
 generateDeliveryJooqSchemaSource.dependsOn flywayMigrate
-test.dependsOn flywayClean
+test.dependsOn flywayClean*/
