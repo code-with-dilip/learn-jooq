@@ -36,9 +36,9 @@ jooq {
     delivery(sourceSets.main) {
         jdbc {
             driver = 'org.postgresql.Driver'
-            url = 'jdbc:postgresql://localhost:5432/jooqtest'
-            user = 'postgres'
-            password = 'postgres'
+            url = project.property('db.local.jdbcUrl')
+            user = project.property('db.local.user')
+            password = project.property('db.local.password')
             schema = 'public'
         }
         generator {
