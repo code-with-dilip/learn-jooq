@@ -8,7 +8,7 @@ create table delivery (
 
 create table delivery_leg (
 	id serial primary key,
-	load_id int references delivery(id),
+	delivery_id int references delivery(id),
 	type text,
 	name text,
 	location_id text,
