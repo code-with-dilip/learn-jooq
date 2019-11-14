@@ -1,16 +1,21 @@
 package com.learnjooq.dao
 
+import com.learnjooq.dto.DeliveryDTO
 import com.learnjooq.dto.DeliveryLegDTO
 import com.learnjooq.generated.Tables.DELIVERY
 import com.learnjooq.generated.Tables.DELIVERY_LEG
 import com.learnjooq.generated.tables.Delivery
+import com.learnjooq.generated.tables.daos.DeliveryDao
+import com.learnjooq.generated.tables.daos.DeliveryLegDao
+import com.learnjooq.generated.tables.pojos.DeliveryLeg
 import org.jooq.DSLContext
+import org.jooq.Record
 import org.springframework.stereotype.Repository
 import java.sql.Timestamp
 import java.time.OffsetDateTime
 
 @Repository
-class DeliveryDao(val dslContext: DSLContext) {
+class DeliveryDAO(val dslContext: DSLContext) {
 
     fun addNewDelivery(delivery: com.learnjooq.dto.DeliveryDTO): Int? {
 
@@ -34,6 +39,16 @@ class DeliveryDao(val dslContext: DSLContext) {
                     .execute()
 
 
+
+    }
+
+    fun getAllDeliveryLegById(deliveryId : Int?): List<DeliveryLeg>? {
+        val deliveryLegList = dslContext.
+                select()
+                .from(DELIVERY_LEG)
+                .where(DELIVERY_LEG.DELIVERY_ID.eq(deliveryId))
+                .fetchInto(DeliveryLeg::class.java)
+        return deliveryLegList
 
     }
 }
