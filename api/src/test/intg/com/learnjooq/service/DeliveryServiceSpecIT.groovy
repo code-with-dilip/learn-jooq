@@ -1,15 +1,12 @@
 package com.learnjooq.service
 
 import com.learnjooq.BaseIntegrationTest
-import com.learnjooq.dto.DeliveryDTO
-import com.learnjooq.dto.DeliveryLegDTO
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.test.context.jdbc.Sql
 import org.springframework.test.context.jdbc.SqlGroup
 import spock.lang.Unroll
 
 import static com.learnjooq.helper.TestHelper.*
-import java.time.LocalDateTime
 
 @SqlGroup([
         @Sql(scripts = ["/sql/TearDown.sql"], executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
@@ -40,7 +37,7 @@ class DeliveryServiceSpecIT extends BaseIntegrationTest {
             def deliveryId = deliveryService.addNewDelivery(buildDelivery())
 
         when:
-            def deliveryDTO = deliveryService.getDeliveryLegById(deliveryId)
+            def deliveryDTO = deliveryService.getDeliveryById(deliveryId)
 
         then:
             deliveryDTO.id
