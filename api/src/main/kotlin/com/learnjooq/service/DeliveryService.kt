@@ -21,7 +21,7 @@ class DeliveryService(@Autowired val deliveryDao: DeliveryDAO) {
 
     fun getDeliveryById(deliveryId : Int?): DeliveryDTO {
 
-        val deliveryLegList = deliveryDao.getAllDeliveryLegById(deliveryId)
+        val deliveryLegList = deliveryDao.getAllDeliveryLegsByDeliveryId(deliveryId)
         return mapToDeliveryDTO(deliveryLegList)
     }
 

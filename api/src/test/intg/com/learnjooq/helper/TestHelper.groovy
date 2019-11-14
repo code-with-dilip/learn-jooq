@@ -3,9 +3,11 @@ package com.learnjooq.helper
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.learnjooq.dto.DeliveryDTO
 import com.learnjooq.dto.DeliveryLegDTO
+import com.learnjooq.generated.tables.pojos.Delivery
 import org.springframework.beans.factory.annotation.Autowired
 
 import java.time.LocalDateTime
+import java.time.OffsetDateTime
 
 class TestHelper {
 
@@ -18,6 +20,13 @@ class TestHelper {
         DeliveryLegDTO deliveryLeg1 = new DeliveryLegDTO(null, null, "SCF", "60Z", "60Z", 2, LocalDateTime.now())
         DeliveryDTO delivery = new DeliveryDTO(null, Arrays.asList(deliveryLeg,deliveryLeg1))
         return delivery
+    }
+
+    static def deliveryJOOQDomain() {
+
+        def deliveryJOOQDomain = new Delivery(null, OffsetDateTime.now(), "SYSTEM", OffsetDateTime.now(), "SYSTEM")
+        return deliveryJOOQDomain
+
     }
 
     static String readJson(String fileName) {
