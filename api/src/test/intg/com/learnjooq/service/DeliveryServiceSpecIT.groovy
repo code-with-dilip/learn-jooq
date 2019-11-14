@@ -1,13 +1,18 @@
 package com.learnjooq.service
 
 import com.learnjooq.BaseIntegrationTest
-import com.learnjooq.dto.DeliveryDTO
-import com.learnjooq.dto.DeliveryLegDTO
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.test.context.jdbc.Sql
+import org.springframework.test.context.jdbc.SqlGroup
+import spock.lang.Unroll
 
-import java.time.LocalDateTime
+import static com.learnjooq.helper.TestHelper.*
 
-class DeliveryServiceSpecIT extends BaseIntegrationTest{
+@SqlGroup([
+        @Sql(scripts = ["/sql/TearDown.sql"], executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
+])
+@Unroll
+class DeliveryServiceSpecIT extends BaseIntegrationTest {
 
     @Autowired
     DeliveryService deliveryService
@@ -25,11 +30,24 @@ class DeliveryServiceSpecIT extends BaseIntegrationTest{
 
     }
 
-    def buildDelivery() {
-        DeliveryLegDTO deliveryLeg = new DeliveryLegDTO(null, null, "STORE", "1088", "1088", 1, LocalDateTime.now())
-        DeliveryDTO delivery = new DeliveryDTO(null, Arrays.asList(deliveryLeg))
-        return delivery
+    def "getDeliveryLegById"() {
+
+
+        given:
+            def deliveryId = deliveryService.addNewDelivery(buildDelivery())
+
+        when:
+            def deliveryDTO = deliveryService.getDeliveryById(deliveryId)
+
+        then:
+            deliveryDTO.id
+            deliveryDTO.stops.size() == 2
+            deliveryDTO.stops.get(0).id
+            deliveryDTO.stops.get(0).deliveryId
+            deliveryDTO.stops.get(0).location_id
+            deliveryDTO.stops.get(0).sequence_num
+            deliveryDTO.stops.get(0).type
+
+
     }
-
-
 }

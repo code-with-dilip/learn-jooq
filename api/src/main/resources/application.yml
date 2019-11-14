@@ -14,3 +14,6 @@ spring:
   flyway:
     # We run Flyway in code to support different migrations for different schemas (see FlywayConfig)
     enabled: false
+logging:
+  level:
+    org.jooq: debug

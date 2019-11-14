@@ -1,26 +1,48 @@
 package com.learnjooq.dao
 
 import com.learnjooq.BaseIntegrationTest
-import com.learnjooq.helper.TestHelper
-import org.springframework.beans.factory.annotation.Autowired
-import com.learnjooq.dao.DeliveryDao
+import org.springframework.test.context.jdbc.Sql
+import org.springframework.test.context.jdbc.SqlGroup
 
-class DeliveryDaoSpecIT extends BaseIntegrationTest{
+import static com.learnjooq.helper.TestHelper.*
+import com.learnjooq.service.DeliveryService
+import org.springframework.beans.factory.annotation.Autowired
+
+@SqlGroup([
+        @Sql(scripts = ["/sql/TearDown.sql"], executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
+])
+class DeliveryDaoSpecIT extends BaseIntegrationTest {
 
     @Autowired
-    DeliveryDao deliveryDao;
+    DeliveryDAO deliveryDao;
+
+    @Autowired
+    DeliveryService deliveryService
 
     def "addDeliveryLegs"() {
 
         given:
-            def deliveryDTO = TestHelper.buildDelivery()
+            def deliveryDTO = buildDelivery()
 
         when:
             def deliveryId = deliveryDao.addNewDelivery(deliveryDTO)
             def rows_updated = deliveryDao.addDeliveryLegs(deliveryId, deliveryDTO.stops)
 
         then:
-            rows_updated==1
+            rows_updated == 2
+
+    }
+
+
+    def "getAllDeliveries"() {
+
+        given:
+            def deliveryId = deliveryService.addNewDelivery(buildDelivery())
+
+        expect:
+            def deliverylegList = deliveryDao.getAllDeliveryLegById(deliveryId)
+            println("deliverylegList : $deliverylegList")
+            deliverylegList.size() == 2
 
     }
 }

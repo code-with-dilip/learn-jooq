@@ -3,10 +3,10 @@ package com.learnjooq.controller
 //import com.learnjooq.dto.Delivery
 import com.learnjooq.dto.DeliveryDTO
 import com.learnjooq.service.DeliveryService
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.http.ResponseEntity
+import org.springframework.web.bind.annotation.*
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder
 
 
 @RestController
@@ -14,8 +14,20 @@ import org.springframework.web.bind.annotation.RestController
 class DeliveryController(val deliveryService: DeliveryService) {
 
 
-    @GetMapping("/delivery")
-    fun createDelivery( @RequestBody delivery : DeliveryDTO){
+    @PostMapping("/delivery")
+    fun createDelivery( @RequestBody delivery : DeliveryDTO): ResponseEntity<Unit> {
+        val deliveryId = deliveryService.addNewDelivery(delivery)
+        val location = ServletUriComponentsBuilder.fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(deliveryId)
+                .toUri()
+        return ResponseEntity.created(location).build<Unit>()
+    }
+
+    @GetMapping("/delivery/{id}")
+    fun retrieveDelivery(@PathVariable("id") loadId: Int?): ResponseEntity<DeliveryDTO> {
+
+        return ResponseEntity.ok().body(deliveryService.getDeliveryById(loadId))
 
     }
 }

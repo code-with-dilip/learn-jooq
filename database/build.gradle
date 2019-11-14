@@ -60,6 +60,7 @@ jooq {
                 immutablePojos = false
                 fluentSetters = true
                 javaTimeTypes=true
+                daos = true
             }
             target {
                 packageName = 'com.learnjooq.generated'
