@@ -42,7 +42,7 @@ class DeliveryDAO(val dslContext: DSLContext) {
 
     }
 
-    fun getAllDeliveryLegById(deliveryId : Int?): List<DeliveryLeg>? {
+    fun getAllDeliveryLegsByDeliveryId(deliveryId : Int?): List<DeliveryLeg>? {
         val deliveryLegList = dslContext.
                 select()
                 .from(DELIVERY_LEG)

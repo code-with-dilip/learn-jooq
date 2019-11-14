@@ -34,13 +34,13 @@ class DeliveryDaoSpecIT extends BaseIntegrationTest {
     }
 
 
-    def "getAllDeliveries"() {
+    def "getAllDeliveryLegById"() {
 
         given:
             def deliveryId = deliveryService.addNewDelivery(buildDelivery())
 
         expect:
-            def deliverylegList = deliveryDao.getAllDeliveryLegById(deliveryId)
+            def deliverylegList = deliveryDao.getAllDeliveryLegsByDeliveryId(deliveryId)
             println("deliverylegList : $deliverylegList")
             deliverylegList.size() == 2
 
