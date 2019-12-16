@@ -13,7 +13,8 @@ spring:
     sql-dialect: postgres
   flyway:
     # We run Flyway in code to support different migrations for different schemas (see FlywayConfig)
-    enabled: false
+    enabled: true
+    schemas: jooqtest
 logging:
   level:
     org.jooq: debug
