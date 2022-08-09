@@ -33,6 +33,18 @@ class DeliveryDaoSpecIT extends BaseIntegrationTest {
 
     }
 
+    def "getAllSchemaNames"() {
+
+        when:
+        def schemaNamesList = deliveryDao.getAllSchemaNames()
+        println("schemaNamesList : $schemaNamesList")
+
+        then:
+        schemaNamesList!=null
+        schemaNamesList.size() == 3
+    }
+
+
 
     def "getAllDeliveryLegById"() {
 
