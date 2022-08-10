@@ -30,10 +30,10 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class DeliveryRecord extends UpdatableRecordImpl<DeliveryRecord> implements Record5<Integer, OffsetDateTime, String, OffsetDateTime, String> {
 
-    private static final long serialVersionUID = -1940407430;
+    private static final long serialVersionUID = -805377030;
 
     /**
-     * Setter for <code>public.delivery.id</code>.
+     * Setter for <code>jooqtest.delivery.id</code>.
      */
     public DeliveryRecord setId(Integer value) {
         set(0, value);
@@ -41,14 +41,14 @@ public class DeliveryRecord extends UpdatableRecordImpl<DeliveryRecord> implemen
     }
 
     /**
-     * Getter for <code>public.delivery.id</code>.
+     * Getter for <code>jooqtest.delivery.id</code>.
      */
     public Integer getId() {
         return (Integer) get(0);
     }
 
     /**
-     * Setter for <code>public.delivery.update_ts</code>.
+     * Setter for <code>jooqtest.delivery.update_ts</code>.
      */
     public DeliveryRecord setUpdateTs(OffsetDateTime value) {
         set(1, value);
@@ -56,14 +56,14 @@ public class DeliveryRecord extends UpdatableRecordImpl<DeliveryRecord> implemen
     }
 
     /**
-     * Getter for <code>public.delivery.update_ts</code>.
+     * Getter for <code>jooqtest.delivery.update_ts</code>.
      */
     public OffsetDateTime getUpdateTs() {
         return (OffsetDateTime) get(1);
     }
 
     /**
-     * Setter for <code>public.delivery.crte_user</code>.
+     * Setter for <code>jooqtest.delivery.crte_user</code>.
      */
     public DeliveryRecord setCrteUser(String value) {
         set(2, value);
@@ -71,14 +71,14 @@ public class DeliveryRecord extends UpdatableRecordImpl<DeliveryRecord> implemen
     }
 
     /**
-     * Getter for <code>public.delivery.crte_user</code>.
+     * Getter for <code>jooqtest.delivery.crte_user</code>.
      */
     public String getCrteUser() {
         return (String) get(2);
     }
 
     /**
-     * Setter for <code>public.delivery.crte_ts</code>.
+     * Setter for <code>jooqtest.delivery.crte_ts</code>.
      */
     public DeliveryRecord setCrteTs(OffsetDateTime value) {
         set(3, value);
@@ -86,14 +86,14 @@ public class DeliveryRecord extends UpdatableRecordImpl<DeliveryRecord> implemen
     }
 
     /**
-     * Getter for <code>public.delivery.crte_ts</code>.
+     * Getter for <code>jooqtest.delivery.crte_ts</code>.
      */
     public OffsetDateTime getCrteTs() {
         return (OffsetDateTime) get(3);
     }
 
     /**
-     * Setter for <code>public.delivery.update_user</code>.
+     * Setter for <code>jooqtest.delivery.update_user</code>.
      */
     public DeliveryRecord setUpdateUser(String value) {
         set(4, value);
@@ -101,7 +101,7 @@ public class DeliveryRecord extends UpdatableRecordImpl<DeliveryRecord> implemen
     }
 
     /**
-     * Getter for <code>public.delivery.update_user</code>.
+     * Getter for <code>jooqtest.delivery.update_user</code>.
      */
     public String getUpdateUser() {
         return (String) get(4);

@@ -21,7 +21,7 @@ import org.jooq.impl.Internal;
 
 /**
  * A class modelling foreign key relationships and constraints of tables of 
- * the <code>public</code> schema.
+ * the <code>jooqtest</code> schema.
  */
 @Generated(
     value = {

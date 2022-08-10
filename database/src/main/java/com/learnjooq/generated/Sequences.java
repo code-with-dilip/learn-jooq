@@ -11,7 +11,7 @@ import org.jooq.impl.SequenceImpl;
 
 
 /**
- * Convenience access to all sequences in public
+ * Convenience access to all sequences in jooqtest
  */
 @Generated(
     value = {
@@ -24,12 +24,12 @@ import org.jooq.impl.SequenceImpl;
 public class Sequences {
 
     /**
-     * The sequence <code>public.delivery_id_seq</code>
+     * The sequence <code>jooqtest.delivery_id_seq</code>
      */
-    public static final Sequence<Integer> DELIVERY_ID_SEQ = new SequenceImpl<Integer>("delivery_id_seq", Public.PUBLIC, org.jooq.impl.SQLDataType.INTEGER.nullable(false));
+    public static final Sequence<Integer> DELIVERY_ID_SEQ = new SequenceImpl<Integer>("delivery_id_seq", Jooqtest.JOOQTEST, org.jooq.impl.SQLDataType.INTEGER.nullable(false));
 
     /**
-     * The sequence <code>public.delivery_leg_id_seq</code>
+     * The sequence <code>jooqtest.delivery_leg_id_seq</code>
      */
-    public static final Sequence<Integer> DELIVERY_LEG_ID_SEQ = new SequenceImpl<Integer>("delivery_leg_id_seq", Public.PUBLIC, org.jooq.impl.SQLDataType.INTEGER.nullable(false));
+    public static final Sequence<Integer> DELIVERY_LEG_ID_SEQ = new SequenceImpl<Integer>("delivery_leg_id_seq", Jooqtest.JOOQTEST, org.jooq.impl.SQLDataType.INTEGER.nullable(false));
 }

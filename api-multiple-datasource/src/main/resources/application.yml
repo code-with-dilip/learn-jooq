@@ -1,0 +1,33 @@
+app:
+  db-first:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/jooqtest?currentSchema=jooqtest
+    username: postgres
+    password: postgres
+
+  db-second:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/loadtrackdb?currentSchema=jooqtest
+    username: postgres
+    password: postgres
+
+spring:
+  datasource:
+    #type: com.zaxxer.hikari.
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/jooqtest
+    username: postgres
+    password: postgres
+    hikari:
+      minimumIdle: 1
+      maximumPoolSize: 10
+      validationQuery: SELECT 1
+  jooq:
+    sql-dialect: postgres
+  flyway:
+    # We run Flyway in code to support different migrations for different schemas (see FlywayConfig)
+    enabled: false
+    schemas: jooqtest
+logging:
+  level:
+    org.jooq: debug
