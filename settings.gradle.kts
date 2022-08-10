@@ -1,2 +1,2 @@
 rootProject.name = "learn-jooq"
-include ("api", "database")
+include ("api-multiple-data-source", "database")

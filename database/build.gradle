@@ -42,7 +42,7 @@ jooq {
             url = project.property('db.local.jdbcUrl')
             user = project.property('db.local.user')
             password = project.property('db.local.password')
-            schema = 'public'
+            schema = 'jooqtest'
         }
         generator {
             name = 'org.jooq.codegen.DefaultGenerator'
@@ -51,7 +51,7 @@ jooq {
             }
             database {
                 name = 'org.jooq.meta.postgres.PostgresDatabase'
-                inputSchema = 'public'
+                inputSchema = 'jooqtest'
             }
             generate {
                 relations = true
@@ -71,10 +71,10 @@ jooq {
 }
 
 flyway {
-    url = 'jdbc:postgresql://localhost:5432/jooqtest'
+    url = 'jdbc:postgresql://localhost:5432/jooqtest?currentSchema=jooqtest'
     user = 'postgres'
     password = 'postgres'
-    schemas = ['public']
+    schemas = ['jooqtest']
     configurations = [ 'compile', 'flywayMigration' ]
 }
 

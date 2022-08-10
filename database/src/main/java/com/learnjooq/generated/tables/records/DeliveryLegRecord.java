@@ -31,10 +31,10 @@ import org.jooq.impl.UpdatableRecordImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class DeliveryLegRecord extends UpdatableRecordImpl<DeliveryLegRecord> implements Record11<Integer, Integer, String, String, String, Integer, LocalDateTime, OffsetDateTime, String, OffsetDateTime, String> {
 
-    private static final long serialVersionUID = -677511504;
+    private static final long serialVersionUID = -672449296;
 
     /**
-     * Setter for <code>public.delivery_leg.id</code>.
+     * Setter for <code>jooqtest.delivery_leg.id</code>.
      */
     public DeliveryLegRecord setId(Integer value) {
         set(0, value);
@@ -42,14 +42,14 @@ public class DeliveryLegRecord extends UpdatableRecordImpl<DeliveryLegRecord> im
     }
 
     /**
-     * Getter for <code>public.delivery_leg.id</code>.
+     * Getter for <code>jooqtest.delivery_leg.id</code>.
      */
     public Integer getId() {
         return (Integer) get(0);
     }
 
     /**
-     * Setter for <code>public.delivery_leg.delivery_id</code>.
+     * Setter for <code>jooqtest.delivery_leg.delivery_id</code>.
      */
     public DeliveryLegRecord setDeliveryId(Integer value) {
         set(1, value);
@@ -57,14 +57,14 @@ public class DeliveryLegRecord extends UpdatableRecordImpl<DeliveryLegRecord> im
     }
 
     /**
-     * Getter for <code>public.delivery_leg.delivery_id</code>.
+     * Getter for <code>jooqtest.delivery_leg.delivery_id</code>.
      */
     public Integer getDeliveryId() {
         return (Integer) get(1);
     }
 
     /**
-     * Setter for <code>public.delivery_leg.type</code>.
+     * Setter for <code>jooqtest.delivery_leg.type</code>.
      */
     public DeliveryLegRecord setType(String value) {
         set(2, value);
@@ -72,14 +72,14 @@ public class DeliveryLegRecord extends UpdatableRecordImpl<DeliveryLegRecord> im
     }
 
     /**
-     * Getter for <code>public.delivery_leg.type</code>.
+     * Getter for <code>jooqtest.delivery_leg.type</code>.
      */
     public String getType() {
         return (String) get(2);
     }
 
     /**
-     * Setter for <code>public.delivery_leg.name</code>.
+     * Setter for <code>jooqtest.delivery_leg.name</code>.
      */
     public DeliveryLegRecord setName(String value) {
         set(3, value);
@@ -87,14 +87,14 @@ public class DeliveryLegRecord extends UpdatableRecordImpl<DeliveryLegRecord> im
     }
 
     /**
-     * Getter for <code>public.delivery_leg.name</code>.
+     * Getter for <code>jooqtest.delivery_leg.name</code>.
      */
     public String getName() {
         return (String) get(3);
     }
 
     /**
-     * Setter for <code>public.delivery_leg.location_id</code>.
+     * Setter for <code>jooqtest.delivery_leg.location_id</code>.
      */
     public DeliveryLegRecord setLocationId(String value) {
         set(4, value);
@@ -102,14 +102,14 @@ public class DeliveryLegRecord extends UpdatableRecordImpl<DeliveryLegRecord> im
     }
 
     /**
-     * Getter for <code>public.delivery_leg.location_id</code>.
+     * Getter for <code>jooqtest.delivery_leg.location_id</code>.
      */
     public String getLocationId() {
         return (String) get(4);
     }
 
     /**
-     * Setter for <code>public.delivery_leg.sequence_num</code>.
+     * Setter for <code>jooqtest.delivery_leg.sequence_num</code>.
      */
     public DeliveryLegRecord setSequenceNum(Integer value) {
         set(5, value);
@@ -117,14 +117,14 @@ public class DeliveryLegRecord extends UpdatableRecordImpl<DeliveryLegRecord> im
     }
 
     /**
-     * Getter for <code>public.delivery_leg.sequence_num</code>.
+     * Getter for <code>jooqtest.delivery_leg.sequence_num</code>.
      */
     public Integer getSequenceNum() {
         return (Integer) get(5);
     }
 
     /**
-     * Setter for <code>public.delivery_leg.event_date_time</code>.
+     * Setter for <code>jooqtest.delivery_leg.event_date_time</code>.
      */
     public DeliveryLegRecord setEventDateTime(LocalDateTime value) {
         set(6, value);
@@ -132,14 +132,14 @@ public class DeliveryLegRecord extends UpdatableRecordImpl<DeliveryLegRecord> im
     }
 
     /**
-     * Getter for <code>public.delivery_leg.event_date_time</code>.
+     * Getter for <code>jooqtest.delivery_leg.event_date_time</code>.
      */
     public LocalDateTime getEventDateTime() {
         return (LocalDateTime) get(6);
     }
 
     /**
-     * Setter for <code>public.delivery_leg.update_ts</code>.
+     * Setter for <code>jooqtest.delivery_leg.update_ts</code>.
      */
     public DeliveryLegRecord setUpdateTs(OffsetDateTime value) {
         set(7, value);
@@ -147,14 +147,14 @@ public class DeliveryLegRecord extends UpdatableRecordImpl<DeliveryLegRecord> im
     }
 
     /**
-     * Getter for <code>public.delivery_leg.update_ts</code>.
+     * Getter for <code>jooqtest.delivery_leg.update_ts</code>.
      */
     public OffsetDateTime getUpdateTs() {
         return (OffsetDateTime) get(7);
     }
 
     /**
-     * Setter for <code>public.delivery_leg.crte_user</code>.
+     * Setter for <code>jooqtest.delivery_leg.crte_user</code>.
      */
     public DeliveryLegRecord setCrteUser(String value) {
         set(8, value);
@@ -162,14 +162,14 @@ public class DeliveryLegRecord extends UpdatableRecordImpl<DeliveryLegRecord> im
     }
 
     /**
-     * Getter for <code>public.delivery_leg.crte_user</code>.
+     * Getter for <code>jooqtest.delivery_leg.crte_user</code>.
      */
     public String getCrteUser() {
         return (String) get(8);
     }
 
     /**
-     * Setter for <code>public.delivery_leg.crte_ts</code>.
+     * Setter for <code>jooqtest.delivery_leg.crte_ts</code>.
      */
     public DeliveryLegRecord setCrteTs(OffsetDateTime value) {
         set(9, value);
@@ -177,14 +177,14 @@ public class DeliveryLegRecord extends UpdatableRecordImpl<DeliveryLegRecord> im
     }
 
     /**
-     * Getter for <code>public.delivery_leg.crte_ts</code>.
+     * Getter for <code>jooqtest.delivery_leg.crte_ts</code>.
      */
     public OffsetDateTime getCrteTs() {
         return (OffsetDateTime) get(9);
     }
 
     /**
-     * Setter for <code>public.delivery_leg.update_user</code>.
+     * Setter for <code>jooqtest.delivery_leg.update_user</code>.
      */
     public DeliveryLegRecord setUpdateUser(String value) {
         set(10, value);
@@ -192,7 +192,7 @@ public class DeliveryLegRecord extends UpdatableRecordImpl<DeliveryLegRecord> im
     }
 
     /**
-     * Getter for <code>public.delivery_leg.update_user</code>.
+     * Getter for <code>jooqtest.delivery_leg.update_user</code>.
      */
     public String getUpdateUser() {
         return (String) get(10);

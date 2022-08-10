@@ -8,9 +8,9 @@ import static com.learnjooq.helper.TestHelper.*
 import com.learnjooq.service.DeliveryService
 import org.springframework.beans.factory.annotation.Autowired
 
-@SqlGroup([
-        @Sql(scripts = ["/sql/TearDown.sql"], executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
-])
+//@SqlGroup([
+//     // @Sql(scripts = ["/sql/TearDown.sql"], executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
+//])
 class DeliveryDaoSpecIT extends BaseIntegrationTest {
 
     @Autowired
@@ -41,7 +41,18 @@ class DeliveryDaoSpecIT extends BaseIntegrationTest {
 
         then:
         schemaNamesList!=null
-        schemaNamesList.size() == 3
+        //schemaNamesList.size() == 3
+    }
+
+    def "getAllSchemaNames_1"() {
+
+        when:
+        def schemaNamesList = deliveryDao.getAllSchemaNames_1()
+        println("schemaNamesList : $schemaNamesList")
+
+        then:
+        schemaNamesList!=null
+        //schemaNamesList.size() == 3
     }
 
 

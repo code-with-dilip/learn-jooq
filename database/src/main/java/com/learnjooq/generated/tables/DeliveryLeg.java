@@ -5,8 +5,8 @@ package com.learnjooq.generated.tables;
 
 
 import com.learnjooq.generated.Indexes;
+import com.learnjooq.generated.Jooqtest;
 import com.learnjooq.generated.Keys;
-import com.learnjooq.generated.Public;
 import com.learnjooq.generated.tables.records.DeliveryLegRecord;
 
 import java.time.LocalDateTime;
@@ -43,10 +43,10 @@ import org.jooq.impl.TableImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class DeliveryLeg extends TableImpl<DeliveryLegRecord> {
 
-    private static final long serialVersionUID = -2130876853;
+    private static final long serialVersionUID = 1841905330;
 
     /**
-     * The reference instance of <code>public.delivery_leg</code>
+     * The reference instance of <code>jooqtest.delivery_leg</code>
      */
     public static final DeliveryLeg DELIVERY_LEG = new DeliveryLeg();
 
@@ -59,76 +59,76 @@ public class DeliveryLeg extends TableImpl<DeliveryLegRecord> {
     }
 
     /**
-     * The column <code>public.delivery_leg.id</code>.
+     * The column <code>jooqtest.delivery_leg.id</code>.
      */
-    public final TableField<DeliveryLegRecord, Integer> ID = createField("id", org.jooq.impl.SQLDataType.INTEGER.nullable(false).defaultValue(org.jooq.impl.DSL.field("nextval('public.delivery_leg_id_seq'::regclass)", org.jooq.impl.SQLDataType.INTEGER)), this, "");
+    public final TableField<DeliveryLegRecord, Integer> ID = createField("id", org.jooq.impl.SQLDataType.INTEGER.nullable(false).defaultValue(org.jooq.impl.DSL.field("nextval('delivery_leg_id_seq'::regclass)", org.jooq.impl.SQLDataType.INTEGER)), this, "");
 
     /**
-     * The column <code>public.delivery_leg.delivery_id</code>.
+     * The column <code>jooqtest.delivery_leg.delivery_id</code>.
      */
     public final TableField<DeliveryLegRecord, Integer> DELIVERY_ID = createField("delivery_id", org.jooq.impl.SQLDataType.INTEGER, this, "");
 
     /**
-     * The column <code>public.delivery_leg.type</code>.
+     * The column <code>jooqtest.delivery_leg.type</code>.
      */
     public final TableField<DeliveryLegRecord, String> TYPE = createField("type", org.jooq.impl.SQLDataType.CLOB, this, "");
 
     /**
-     * The column <code>public.delivery_leg.name</code>.
+     * The column <code>jooqtest.delivery_leg.name</code>.
      */
     public final TableField<DeliveryLegRecord, String> NAME = createField("name", org.jooq.impl.SQLDataType.CLOB, this, "");
 
     /**
-     * The column <code>public.delivery_leg.location_id</code>.
+     * The column <code>jooqtest.delivery_leg.location_id</code>.
      */
     public final TableField<DeliveryLegRecord, String> LOCATION_ID = createField("location_id", org.jooq.impl.SQLDataType.CLOB, this, "");
 
     /**
-     * The column <code>public.delivery_leg.sequence_num</code>.
+     * The column <code>jooqtest.delivery_leg.sequence_num</code>.
      */
     public final TableField<DeliveryLegRecord, Integer> SEQUENCE_NUM = createField("sequence_num", org.jooq.impl.SQLDataType.INTEGER, this, "");
 
     /**
-     * The column <code>public.delivery_leg.event_date_time</code>.
+     * The column <code>jooqtest.delivery_leg.event_date_time</code>.
      */
     public final TableField<DeliveryLegRecord, LocalDateTime> EVENT_DATE_TIME = createField("event_date_time", org.jooq.impl.SQLDataType.LOCALDATETIME, this, "");
 
     /**
-     * The column <code>public.delivery_leg.update_ts</code>.
+     * The column <code>jooqtest.delivery_leg.update_ts</code>.
      */
     public final TableField<DeliveryLegRecord, OffsetDateTime> UPDATE_TS = createField("update_ts", org.jooq.impl.SQLDataType.TIMESTAMPWITHTIMEZONE.defaultValue(org.jooq.impl.DSL.field("CURRENT_TIMESTAMP", org.jooq.impl.SQLDataType.TIMESTAMPWITHTIMEZONE)), this, "");
 
     /**
-     * The column <code>public.delivery_leg.crte_user</code>.
+     * The column <code>jooqtest.delivery_leg.crte_user</code>.
      */
     public final TableField<DeliveryLegRecord, String> CRTE_USER = createField("crte_user", org.jooq.impl.SQLDataType.CLOB, this, "");
 
     /**
-     * The column <code>public.delivery_leg.crte_ts</code>.
+     * The column <code>jooqtest.delivery_leg.crte_ts</code>.
      */
     public final TableField<DeliveryLegRecord, OffsetDateTime> CRTE_TS = createField("crte_ts", org.jooq.impl.SQLDataType.TIMESTAMPWITHTIMEZONE.defaultValue(org.jooq.impl.DSL.field("CURRENT_TIMESTAMP", org.jooq.impl.SQLDataType.TIMESTAMPWITHTIMEZONE)), this, "");
 
     /**
-     * The column <code>public.delivery_leg.update_user</code>.
+     * The column <code>jooqtest.delivery_leg.update_user</code>.
      */
     public final TableField<DeliveryLegRecord, String> UPDATE_USER = createField("update_user", org.jooq.impl.SQLDataType.CLOB, this, "");
 
     /**
-     * Create a <code>public.delivery_leg</code> table reference
+     * Create a <code>jooqtest.delivery_leg</code> table reference
      */
     public DeliveryLeg() {
         this(DSL.name("delivery_leg"), null);
     }
 
     /**
-     * Create an aliased <code>public.delivery_leg</code> table reference
+     * Create an aliased <code>jooqtest.delivery_leg</code> table reference
      */
     public DeliveryLeg(String alias) {
         this(DSL.name(alias), DELIVERY_LEG);
     }
 
     /**
-     * Create an aliased <code>public.delivery_leg</code> table reference
+     * Create an aliased <code>jooqtest.delivery_leg</code> table reference
      */
     public DeliveryLeg(Name alias) {
         this(alias, DELIVERY_LEG);
@@ -151,7 +151,7 @@ public class DeliveryLeg extends TableImpl<DeliveryLegRecord> {
      */
     @Override
     public Schema getSchema() {
-        return Public.PUBLIC;
+        return Jooqtest.JOOQTEST;
     }
 
     /**

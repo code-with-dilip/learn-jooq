@@ -12,7 +12,7 @@ import javax.annotation.Generated;
 
 
 /**
- * Convenience access to all tables in public
+ * Convenience access to all tables in jooqtest
  */
 @Generated(
     value = {
@@ -25,17 +25,17 @@ import javax.annotation.Generated;
 public class Tables {
 
     /**
-     * The table <code>public.delivery</code>.
+     * The table <code>jooqtest.delivery</code>.
      */
     public static final Delivery DELIVERY = com.learnjooq.generated.tables.Delivery.DELIVERY;
 
     /**
-     * The table <code>public.delivery_leg</code>.
+     * The table <code>jooqtest.delivery_leg</code>.
      */
     public static final DeliveryLeg DELIVERY_LEG = com.learnjooq.generated.tables.DeliveryLeg.DELIVERY_LEG;
 
     /**
-     * The table <code>public.flyway_schema_history</code>.
+     * The table <code>jooqtest.flyway_schema_history</code>.
      */
     public static final FlywaySchemaHistory FLYWAY_SCHEMA_HISTORY = com.learnjooq.generated.tables.FlywaySchemaHistory.FLYWAY_SCHEMA_HISTORY;
 }
