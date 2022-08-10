@@ -16,8 +16,6 @@ application {
     mainClassName = "com.learnjooq.LearnJooqApplicationKt"
 }
 
-
-
 java.sourceCompatibility = JavaVersion.VERSION_11
 
 
