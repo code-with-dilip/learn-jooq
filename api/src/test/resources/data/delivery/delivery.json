@@ -1,0 +1,32 @@
+{
+  "id": null,
+  "stops": [{
+    "id": null,
+    "deliveryId": null,
+    "type": "STORE",
+    "name": "1088",
+    "location_id": "1088",
+    "sequence_num": 1,
+    "eventTs": "2019-11-13T17:56:19.981704",
+    "createTs": "2019-11-13T17:56:19.985202",
+    "createUser": "SYSTEM",
+    "updateTs": "2019-11-13T17:56:19.985245",
+    "updateUser": "SYSTEM"
+  }, {
+    "id": null,
+    "deliveryId": null,
+    "type": "SCF",
+    "name": "60Z",
+    "location_id": "60Z",
+    "sequence_num": 2,
+    "eventTs": "2019-11-13T17:56:19.985397",
+    "createTs": "2019-11-13T17:56:19.985438",
+    "createUser": "SYSTEM",
+    "updateTs": "2019-11-13T17:56:19.985449",
+    "updateUser": "SYSTEM"
+  }],
+  "createTs": "2019-11-13T17:56:19.993614",
+  "createUser": "SYSTEM",
+  "updateTs": "2019-11-13T17:56:19.993649",
+  "updateUser": "SYSTEM"
+}
